@@ -5,7 +5,11 @@ const usersReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_ALL_USERS:
-            return action.users;
+            let users_obj = {};
+            action.users.forEach(user => {
+                users_obj[user.id] = user
+            })
+            return users_obj;
         case RECEIVE_USER:
             let newUser = {[action.user.id]: action.user}
             return merge({}, state, newUser);

@@ -30,3 +30,9 @@ export const createTodo = todo => dispatch => (
         todo => dispatch(receiveTodo(todo))
     )
 );
+
+export const fetchUserTodos = userId => dispatch => (
+    TodoApiUtil.fetchUserTodos(userId).then(
+        todos => dispatch(receiveAllTodos(todos))
+    )
+);

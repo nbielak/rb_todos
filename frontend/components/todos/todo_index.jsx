@@ -9,6 +9,7 @@ class TodoIndex extends React.Component {
     componentDidMount() {
         window.scrollTo(0, 0);
         this.props.fetchAllTodos()
+            .then(action => this.setState({todos: action.todos}))
             .then(res => this.props.fetchAllUsers())
             .then(action => this.setState({users: action.users}))
     }

@@ -21,3 +21,10 @@ export const createTodo = todo => (
         data: { todo }
     })
 );
+
+export const fetchUserTodos = userId => (
+    $.ajax ({
+        method: 'GET',
+        url: `https://jsonplaceholder.typicode.com/todos?userId=${userId}`
+    })
+)

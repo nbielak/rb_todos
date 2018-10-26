@@ -4,24 +4,20 @@ import { withRouter } from "react-router-dom";
 class TodoIndexItem extends React.Component {
     constructor(props) {
         super(props);
-        this.getUsername = this.getUsername.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    getUsername() {
-        // debugger;
-        let user = this.props.users[this.props.userId];
-        console.log(user);
-        return (user.name);
+    handleClick(e) {
+        this.props.history.push(`/todos/${this.props.todo.id}`)
     }
 
     render() {
         if (!this.props.userId || Object.keys(this.props.users).length === 0) {
             return null;
         }
-        let username = this.props.users[this.props.userId - 1].username
-        console.log(this.props);
+        let username = this.props.users[this.props.userId].username
         return (
-            <div>
+            <div onClick={this.handleClick}>
                 <ul>
                     <li>
                         {this.props.todo.title}
@@ -38,24 +34,4 @@ class TodoIndexItem extends React.Component {
     }
 }
 
-// const todoIndexItem = ({todo, userId, users}) => {
-//     return (
-//         <div>
-//             <ul>
-//                 <li>
-//                     {todo.title}
-//                 </li>
-//                 <li>
-//                     {users[userId].username}
-//                 </li>
-//                 <li>
-//                     {todo.completed}
-//                 </li>
-//             </ul>
-//         </div>
-//     );
-// }
-
-// get todo user
-
-export default TodoIndexItem;
+export default withRouter(TodoIndexItem);

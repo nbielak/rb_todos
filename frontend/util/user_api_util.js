@@ -10,6 +10,6 @@ export const fetchAllUsers = () => (
 export const fetchUser = userId => (
     $.ajax({
         method: 'GET',
-        url: `https://jsonplaceholder.typicode.com/todos/${userId}`
+        url: `https://jsonplaceholder.typicode.com/users/${userId}`
     })
 );

@@ -1,7 +1,9 @@
 import { RECEIVE_ALL_TODOS, RECEIVE_TODO } from '../actions/todo_actions';
 import merge from 'lodash/merge';
 
-const todosReducer = (state={}, action) => {
+//slice of state not resetting, doesn't like resetting
+
+const todosReducer = (state = {}, action) => {
     Object.freeze(state);
     switch(action.type) {
         case RECEIVE_ALL_TODOS:
@@ -12,6 +14,6 @@ const todosReducer = (state={}, action) => {
         default:
             return state;
     }
-}
+};
 
 export default todosReducer;
