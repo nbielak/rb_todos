@@ -12,10 +12,10 @@ import Footer from './footer/footer';
 const App = () => (
   <div className="main-content">
     <header>
-      <NavBar></NavBar>
+      <NavBar/>
     </header>
 
-    <div>
+    <div className="content">
       <Switch>
         <Route exact path="/" component={TodoIndexContainer} />
         <Route path="/createtodo" component={CreateTodoFormContainer}/>

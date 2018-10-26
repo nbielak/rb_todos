@@ -1,5 +1,6 @@
 import React from 'react';
 import UserTodos from "../todos/user_todos";
+import UserInfo from "./user_info";
 
 class UserShow extends React.Component {
     constructor(props) {
@@ -19,9 +20,23 @@ class UserShow extends React.Component {
         }
         
         return (
-            <div>
-                <p>{this.props.user.name}</p> 
-                <UserTodos todos={this.props.todos} user={this.props.user} />
+            <div className="index-page">
+                <div className="page-header-wrapper">
+                    <h1>{this.props.user.username}</h1>
+                </div>
+
+                <div className="todo-info">
+                    <UserInfo user={this.props.user}/>
+                </div>
+                
+                <div>
+                    <div className="page-header-wrapper">
+                        <h2>{this.props.user.username}'s Todos</h2>
+                    </div>
+                    <div className="index-wrapper">
+                        <UserTodos todos={this.props.todos} user={this.props.user} />
+                    </div>
+                </div>
             </div>
         );
     }

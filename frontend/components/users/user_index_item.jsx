@@ -16,10 +16,18 @@ class UserIndexItem extends React.Component {
             return null
         }
         return (
-            <div onClick={this.handleClick}>
-                <div>{this.props.user.username}</div>
-                <div>{this.props.user.name}</div>
-                <div>{this.props.user.company.name}</div>
+            <div className="todo-index-item" onClick={this.handleClick}>
+                <div className="item-title-wrapper">
+                    {this.props.user.username}
+                </div>
+                <ul className="info-list">
+                    <li className="info-list-item">
+                        {this.props.user.name}
+                    </li>
+                    <li className="info-list-item">
+                        {this.props.user.company.name}
+                    </li>
+                </ul>
             </div>
         )
     }

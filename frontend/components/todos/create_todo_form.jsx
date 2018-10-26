@@ -49,18 +49,26 @@ class CreateTodoForm extends React.Component {
     }
 
     render() {
-        return(
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <p>Title</p>
-                    <input type="text" onChange={this.updateTitle()} />
-                    <p>Username</p>
-                    <input type="" onChange={this.updateUsername()} />
-
-                    <input type="submit" value="Create Todo"/>
-                </form>
+        return <div className="create-todo">
+            <div className="page-header-wrapper">
+              <h1>Create New Todo</h1>
             </div>
-        )
+            <form className="create-todo-form" onSubmit={this.handleSubmit}>
+              <div className="input-wrapper">
+                <label className="label-title">Title</label>
+                <input className="form-control" type="text" onChange={this.updateTitle()} placeholder="Input Title"/>
+              </div>
+
+              <div className="input-wrapper">
+                <label className="label-title">Username</label>
+                <input className="form-control" type="" onChange={this.updateUsername()} placeholder="Input Username"/>
+              </div>
+
+              <div className="submit-wrapper">
+                <input className="btn btn-primary" type="submit" value="Create Todo" />
+              </div>
+            </form>
+          </div>;
     }
 
     
