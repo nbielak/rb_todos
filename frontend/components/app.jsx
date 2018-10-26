@@ -6,10 +6,16 @@ import CreateTodoFormContainer from './todos/create_todo_form_container';
 import UserIndexContainer from './users/user_index_container';
 import UserShowContainer from './users/user_show_container';
 
+import NavBar from './nav_bar/nav_bar';
+import Footer from './footer/footer';
+
 const App = () => (
   <div className="main-content">
+    <header>
+      <NavBar></NavBar>
+    </header>
+
     <div>
-      <h1>Hello World</h1>
       <Switch>
         <Route exact path="/" component={TodoIndexContainer} />
         <Route path="/createtodo" component={CreateTodoFormContainer}/>
@@ -18,6 +24,10 @@ const App = () => (
         <Route path="/users/:userId" component={UserShowContainer} />
       </Switch>
     </div>
+
+    <footer>
+      <Footer/>
+    </footer>
   </div>
 );
 
