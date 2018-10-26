@@ -1,4 +1,5 @@
-export const selectUser = users => {
+export const selectUser = ({todos, users}) => {
+    if (!users || Object.keys(users).length < 1) {return {}};
     let keys = Object.keys(users);
     return users[keys[0]];
 }

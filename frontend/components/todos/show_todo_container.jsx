@@ -4,10 +4,15 @@ import { fetchTodo } from '../../actions/todo_actions';
 import { fetchUser } from '../../actions/user_actions';
 import { selectUser } from '../../reducers/selectors';
 
-const mapStateToProps = (state, ownProps) => ({
-    todo: state.entities.todos[ownProps.match.params.todoId],
-    user: selectUser(state.entities.users)
-});
+const mapStateToProps = (state, ownProps) => {
+    let todo = state.entities.todos[ownProps.match.params.todoId];
+    let user = todo ? state.entities.users[todo.userId] : {};
+    // debugger;
+    return {
+    todo,
+    user
+    }
+};
 
 const mapDispatchToProps = dispatch => ({
     fetchTodo: todoId => dispatch(fetchTodo(todoId)),

@@ -10,7 +10,7 @@ class UserShow extends React.Component {
         window.scrollTo(0, 0);
         this.props.fetchUser(this.props.match.params.userId)
             .then(action => this.props.fetchUserTodos(this.props.match.params.userId))
-            .then(action => this.setState({todos: action.todos}))
+            // .then(action => this.setState({todos: action.todos}))
     }
 
     render() {

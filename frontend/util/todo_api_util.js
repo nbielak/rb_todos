@@ -3,7 +3,7 @@ import $ from 'jquery';
 export const fetchAllTodos = () => (
     $.ajax ({
         method: 'GET',
-        url: 'https://jsonplaceholder.typicode.com/todos/'
+        url: 'https://jsonplaceholder.typicode.com/todos'
     })
 );
 
@@ -17,8 +17,9 @@ export const fetchTodo = todoId => (
 export const createTodo = todo => (
     $.ajax ({
         method: 'POST',
-        url: 'https://jsonplaceholder.typicode.com/todos/',
-        data: { todo }
+        url: 'https://jsonplaceholder.typicode.com/todos',
+        data: JSON.stringify(todo),
+        contentType: "application/json; charset=UTF-8",
     })
 );
 

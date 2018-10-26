@@ -12,10 +12,11 @@ class TodoIndexItem extends React.Component {
     }
 
     render() {
-        if (!this.props.userId || Object.keys(this.props.users).length === 0) {
-            return null;
+        if (!this.props.users[this.props.userId]) {
+          return null;
         }
-        let username = this.props.users[this.props.userId].username
+        // debugger;
+        let username = this.props.users[this.props.userId].username;
         return (
             <div onClick={this.handleClick}>
                 <ul>

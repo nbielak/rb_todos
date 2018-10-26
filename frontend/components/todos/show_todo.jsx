@@ -16,7 +16,8 @@ class ShowTodo extends React.Component {
     }
 
     render() {
-        if (!this.props.todo || !this.props.user) {
+        // debugger;
+        if (!this.props.todo || !this.props.user || Object.keys(this.props.user).length < 1 || this.props.user.id !== this.props.todo.userId) {
             return null;
         }
 
