@@ -20,7 +20,7 @@ class TodoIndexItem extends React.Component {
         if (!this.props.users[this.props.userId]) {
           return null;
         }
-        // debugger;
+
         let username = this.props.users[this.props.userId].username;
         return (
             <div className="todo-index-item" onClick={this.handleClick}>

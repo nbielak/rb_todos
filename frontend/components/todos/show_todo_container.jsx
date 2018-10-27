@@ -7,7 +7,6 @@ import { selectUser } from '../../reducers/selectors';
 const mapStateToProps = (state, ownProps) => {
     let todo = state.entities.todos[ownProps.match.params.todoId];
     let user = todo ? state.entities.users[todo.userId] : {};
-    // debugger;
     return {
     todo,
     user

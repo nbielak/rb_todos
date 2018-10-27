@@ -1,14 +1,18 @@
-body, html {
-  height: 100%;
-}
+
 
 li {
     list-style: none;
 }
 
+.main-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 .content {
     margin: auto;
-    min-height: 100vh;
+    height: 100%;
+    width: 100vw;
 }
 
 .index-page {
@@ -65,6 +69,7 @@ li {
 
 .todo-show {
     width: 66.6666666666%;
+    height: 100vh;
     margin: auto;
     padding-top: 40px;
 }
@@ -135,4 +140,16 @@ li {
 .label-title {
     font-size: 18px;
     font-weight: 600px;
+}
+
+.footer {
+    height: 50px;
+    background: #f8f9fa;
+    border-top: 1px solid lightgrey;
+    text-align: center;
+    font-size: 24px;
+}
+
+#user-link:hover {
+    cursor: pointer;
 }

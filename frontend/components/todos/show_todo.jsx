@@ -4,6 +4,7 @@ class ShowTodo extends React.Component {
     constructor(props) {
         super(props);
         this.completed = this.completed.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
@@ -14,6 +15,10 @@ class ShowTodo extends React.Component {
                 this.setState({user: action.user})
             }
         )
+    }
+
+    handleClick() {
+        this.props.history.push(`/users/${this.props.user.id}`)
     }
 
     completed() {
@@ -32,8 +37,8 @@ class ShowTodo extends React.Component {
                         <h1>{this.props.todo.title}</h1>
                     </div>
 
-                    <div className="info-list">
-                        <div className="info-list-item">
+                    <div className="info-list" onClick={this.handleClick}>
+                        <div id="user-link" className="info-list-item">
                             {this.props.user.username}
                         </div>
 

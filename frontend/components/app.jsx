@@ -11,9 +11,9 @@ import Footer from './footer/footer';
 
 const App = () => (
   <div className="main-content">
-    <header>
+    <div>
       <NavBar/>
-    </header>
+    </div>
 
     <div className="content">
       <Switch>
