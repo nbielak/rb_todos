@@ -4,8 +4,8 @@ module.exports = {
     context: __dirname,
     entry: './frontend/todo.jsx',
     output: {
-        path: path.join(__dirname),
-        filename: './bundle.js'
+        path: path.resolve(__dirname),
+        filename: 'bundle.js'
     },
     module: {
         rules: [
